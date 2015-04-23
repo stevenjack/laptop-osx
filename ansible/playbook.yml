@@ -21,7 +21,7 @@
   roles:
     - dotfiles
 
-- name: vim
+- name: vimfiles
   hosts: laptop
   roles:
-    - vim
+    - vimfiles
