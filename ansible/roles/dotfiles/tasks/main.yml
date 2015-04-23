@@ -1,0 +1,23 @@
+---
+# dotfiles playbook
+
+- name: "Clone dotfiles"
+  git: repo=https://github.com/sthulb/dotfiles.git dest=/Users/{{ansible_user_id}}/.dotfiles recursive=yes
+
+- name: "Link files"
+  file: src=/Users/{{ansible_user_id}}/.dotfiles/{{ item.path }} dest=/Users/{{ansible_user_id}}/{{ item.dest }} state=link
+  with_items:
+    - { path: "tmux.conf", dest: ".tmux.conf" }
+    - { path: "gitconfig", dest: ".gitconfig" }
+    - { path: "zsh/zshrc", dest: ".zshrc" }
+
+- name: "Install font"
+  file: src="/Users/{{ansible_user_id}}/.dotfiles/fonts/Droid Sans Mono for Powerline.otf" dest="/Users/{{ansible_user_id}}/Library/Fonts/Droid Sans Mono for Powerline.otf" state=link
+
+- name: "add shell"
+  lineinfile: dest=/etc/shells line='/usr/local/bin/zsh'
+  sudo: true
+
+- name: "change shell"
+  command: chsh -s /usr/local/bin/zsh {{ansible_user_id}}
+  sudo: true
