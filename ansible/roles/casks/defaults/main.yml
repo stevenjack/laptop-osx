@@ -1,0 +1,16 @@
+---
+# properties
+
+casks:
+  taps:
+    - "caskroom/cask"
+
+  packages:
+    - "dropbox"
+    - "google-chrome"
+    - "iterm2-beta"
+    - "spotify"
+    - "transmission"
+    - "virtualbox"
+    - "vlc"
+    - "vmware-fusion"
