@@ -4,6 +4,7 @@
 casks:
   taps:
     - "caskroom/cask"
+    - "caskroom/versions"
 
   packages:
     - "dropbox"
