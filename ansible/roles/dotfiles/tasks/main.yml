@@ -2,22 +2,22 @@
 # dotfiles playbook
 
 - name: "Clone dotfiles"
-  git: repo=https://github.com/sthulb/dotfiles.git dest=/Users/{{ansible_env.SUDO_USER}}/.dotfiles recursive=yes
+  git: repo=https://github.com/sthulb/dotfiles.git dest=/Users/{{ansible_env['SUDO_USER']}}/.dotfiles recursive=yes
 
 - name: "Link files"
-  file: src=/Users/{{ansible_env.SUDO_USER}}/.dotfiles/{{ item.path }} dest=/Users/{{ansible_env.SUDO_USER}}/{{ item.dest }} state=link
+  file: src=/Users/{{ansible_env['SUDO_USER']}}/.dotfiles/{{ item.path }} dest=/Users/{{ansible_env['SUDO_USER']}}/{{ item.dest }} state=link
   with_items:
     - { path: "tmux.conf", dest: ".tmux.conf" }
     - { path: "gitconfig", dest: ".gitconfig" }
     - { path: "zsh/zshrc", dest: ".zshrc" }
 
 - name: "Install font"
-  file: src="/Users/{{ansible_env.SUDO_USER}}/.dotfiles/fonts/Droid Sans Mono for Powerline.otf" dest="/Users/{{ansible_env.SUDO_USER}}/Library/Fonts/Droid Sans Mono for Powerline.otf" state=link
+  file: src="/Users/{{ansible_env['SUDO_USER']}}/.dotfiles/fonts/Droid Sans Mono for Powerline.otf" dest="/Users/{{ansible_env['SUDO_USER']}}/Library/Fonts/Droid Sans Mono for Powerline.otf" state=link
 
 - name: "add shell"
   lineinfile: dest=/etc/shells line='/usr/local/bin/zsh'
   sudo: true
 
 - name: "change shell"
-  command: chsh -s /usr/local/bin/zsh {{ansible_env.SUDO_USER}}
+  command: chsh -s /usr/local/bin/zsh {{ansible_env['SUDO_USER']}}
   sudo: true

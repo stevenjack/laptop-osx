@@ -2,10 +2,10 @@
 # vimfiles playbook
 
 - name: "Clone vimfiles"
-  git: repo=https://github.com/sthulb/vimfiles.git dest=/Users/{{ansible_env.SUDO_USER}}/.vimfiles recursive=yes
+  git: repo=https://github.com/sthulb/vimfiles.git dest=/Users/{{ansible_env['SUDO_USER']}}/.vimfiles recursive=yes
 
 - name: "Link files"
-  file: src=/Users/{{ansible_env.SUDO_USER}}/.vimfiles/{{ item.path }} dest=/Users/{{ansible_env.SUDO_USER}}/{{ item.dest }} state=link
+  file: src=/Users/{{ansible_env['SUDO_USER']}}/.vimfiles/{{ item.path }} dest=/Users/{{ansible_env['SUDO_USER']}}/{{ item.dest }} state=link
   with_items:
     - { path: "vimrc.vim", dest: ".vimrc" }
     - { path: "plugins", dest: ".vim" }
