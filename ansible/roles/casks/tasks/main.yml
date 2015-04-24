@@ -10,7 +10,6 @@
 
 - name: "install cask package"
   homebrew: name=brew-cask state=latest
-  sudo: true
 
 - name: "Install Casks"
   homebrew_cask: name={{item}} state=installed
