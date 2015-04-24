@@ -42,7 +42,7 @@ ansible_deps() {
 }
 ansible() {
   info "Running Ansible"
-  $PROVISION_DIR/bin/ansible-playbook $PROVISION_DIR/repo/ansible/playbook.yml -i $PROVISION_DIR/repo/ansible/hosts --ask-sudo-pass
+  $PROVISION_DIR/bin/ansible-playbook $PROVISION_DIR/repo/ansible/playbook.yml -e install_user=`whoami`  -i $PROVISION_DIR/repo/ansible/hosts --ask-sudo-pass
 }
 clone_repo() {
   git clone -q https://github.com/sthulb/laptop-osx.git $PROVISION_DIR/repo
