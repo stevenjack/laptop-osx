@@ -16,6 +16,3 @@
   environment:
     HOMEBREW_CASK_OPTS: "--appdir=/Applications"
   with_items: casks.packages
-
-- name: "Set permissions"
-  file: path=/opt owner={{install_user}} group=staff state=touch
