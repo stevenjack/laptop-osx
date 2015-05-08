@@ -9,9 +9,12 @@ casks:
   packages:
     - "dropbox"
     - "google-chrome"
+    - "hipchat"
     - "iterm2-beta"
     - "spotify"
+    - "the-unarchiver"
     - "transmission"
     - "virtualbox"
+    - "viscosity"
     - "vlc"
     - "vmware-fusion"
