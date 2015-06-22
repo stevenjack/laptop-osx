@@ -9,6 +9,7 @@ casks:
   packages:
     - "dropbox"
     - "google-chrome"
+    - "google-hangouts"
     - "hipchat"
     - "iterm2-beta"
     - "spotify"
