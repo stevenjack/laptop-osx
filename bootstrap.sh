@@ -45,7 +45,7 @@ ansible() {
   $PROVISION_DIR/bin/ansible-playbook $PROVISION_DIR/repo/ansible/playbook.yml -e install_user=`whoami`  -i $PROVISION_DIR/repo/ansible/hosts --ask-sudo-pass
 }
 clone_repo() {
-  git clone -q https://github.com/sthulb/laptop-osx.git $PROVISION_DIR/repo
+  git clone -q https://github.com/stevenjack/laptop-osx.git $PROVISION_DIR/repo
 }
 main() {
   xcode_cli_tools

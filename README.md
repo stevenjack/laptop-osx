@@ -1,10 +1,9 @@
-
 # Laptop OS X
 
 | Title   | URL                                  |
 |:--------|:-------------------------------------|
-| Website | https://github.com/sthulb/laptop-osx |
-| Source  | https://github.com/sthulb/laptop-osx |
+| Website | https://github.com/stevenjack/laptop-osx |
+| Source  | https://github.com/stevenjack/laptop-osx |
 
 Laptop provisioning
 
