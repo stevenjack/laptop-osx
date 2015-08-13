@@ -99,7 +99,7 @@ osx:
       value: -bool true
       domain: com.apple.Dock
     - key: orientation
-      value: -string right
+      value: -string left
       domain: com.apple.Dock
     - key: tilesize
       value: -int 24
