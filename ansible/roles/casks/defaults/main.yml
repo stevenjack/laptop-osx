@@ -7,6 +7,8 @@ casks:
     - "caskroom/versions"
 
   packages:
+    - "divvy"
+    - "1password"
     - "dropbox"
     - "google-chrome"
     - "google-hangouts"
